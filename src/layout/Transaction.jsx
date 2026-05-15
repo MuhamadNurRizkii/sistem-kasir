@@ -63,7 +63,7 @@ const Transaction = () => {
         <div className="p-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-purple-600">Daftar Produk</h1>
           <div className="flex items-center gap-2">
-            <Link to={"/products/checkout"}>
+            <Link className="lg:hidden" to={"/products/checkout"}>
               <div
                 className={
                   "p-3 relative bg-purple-100 text-purple-700 border rounded-full"
