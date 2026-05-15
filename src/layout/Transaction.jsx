@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Spinner } from "@/components/ui/spinner";
 import CardProduct from "@/components/CardProduct";
 import { Input } from "@/components/ui/input";
@@ -61,20 +62,23 @@ const Transaction = () => {
         {/* title */}
         <div className="p-4 flex justify-between items-center">
           <h1 className="text-xl font-bold text-purple-600">Daftar Produk</h1>
-          <Link to={"/products/checkout"}>
-            <div
-              className={
-                "p-3 relative bg-purple-100 text-purple-700 border rounded-full"
-              }
-            >
-              <ShoppingCart size={24} />
-              <span
-                className={`${cart.length === 0 ? "hidden" : "block"} text-white absolute -top-2 -right-2  w-6 h-6 text-center bg-purple-600 rounded-full`}
+          <div className="flex items-center gap-2">
+            <Link to={"/products/checkout"}>
+              <div
+                className={
+                  "p-3 relative bg-purple-100 text-purple-700 border rounded-full"
+                }
               >
-                {cart.length}
-              </span>
-            </div>
-          </Link>
+                <ShoppingCart size={24} />
+                <span
+                  className={`${cart.length === 0 ? "hidden" : "block"} text-white absolute -top-2 -right-2  w-6 h-6 text-center bg-purple-600 rounded-full`}
+                >
+                  {cart.length}
+                </span>
+              </div>
+            </Link>
+            <SidebarTrigger className="md:hidden" />
+          </div>
         </div>
         {/* search produk */}
         <div className="p-2">

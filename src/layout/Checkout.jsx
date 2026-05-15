@@ -1,6 +1,7 @@
 import { useTransaction } from "@/hooks/useTransaction";
 import React, { useEffect } from "react";
 import { useState } from "react";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { ShoppingCart } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import ProductList from "@/components/ProductList";
@@ -33,9 +34,12 @@ const Checkout = () => {
       <div className="flex-1  min-h-0 flex flex-col rounded-md overflow-hidden">
         {/* 1. TITLE: Tambahkan shrink-0 agar tidak terkompres saat list penuh */}
         <div className="p-4 flex justify-between items-center shrink-0">
-          <h1 className="text-xl text-center font-bold text-purple-600">
-            Pesanan saat ini
-          </h1>
+          <div className="flex items-center gap-2">
+            <SidebarTrigger className="md:hidden" />
+            <h1 className="text-xl text-center font-bold text-purple-600">
+              Pesanan saat ini
+            </h1>
+          </div>
           <Link
             to={"/products"}
             className="p-2 bg-purple-100 text-purple-700 rounded-md font-semibold"

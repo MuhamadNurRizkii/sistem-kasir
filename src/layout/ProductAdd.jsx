@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { SidebarTrigger } from "@/components/ui/sidebar";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
@@ -58,7 +59,10 @@ const ProductAdd = () => {
   console.log({ namaProduk, harga, stok, kategori });
 
   return (
-    <div className="w-full h-screen flex justify-center items-center">
+    <div className="w-full h-screen flex justify-center items-center relative">
+      <div className="absolute top-4 left-4 md:hidden">
+        <SidebarTrigger />
+      </div>
       <Toaster />
       <Card className={"w-full max-w-md"}>
         <CardHeader className={"text-center text-xl font-semibold"}>
